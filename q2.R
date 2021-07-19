@@ -10,7 +10,7 @@ check_21 <- grepl(("2021"), data, fixed = TRUE)
 dados <- subset(dados, check_20 == TRUE | check_21 == TRUE)
 dados <- subset(dados, idade > 0 & idade < 120)
 
-pacientes.tb <- table(milsa$situacao_atual)
+pacientes.tb <- table(dados$situacao_atual)
 
 str(dados)
 
