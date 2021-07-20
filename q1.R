@@ -1,6 +1,8 @@
 lista <- c(48, 58, 56, 63, 52, 50, 59, 51, 59, 38, 57, 56, 73, 61, 41, 55, 49, 61, 49, 49, 52, 55, 60, 52, 54,
            57, 47, 66, 60, 53, 59, 50, 45, 57, 64, 56, 57, 60, 47, 58, 53, 58, 66, 47, 40)
 
+grid <- grid(nx = NA, ny = NULL, lty = 2, col = "gray", lwd = 1)
+
 #############################################################
 
 #LETRA A: HISTOGRAMA DA FREQUÊNCIA DA LISTA DE NÚMEROS AGRUPADOS
@@ -9,21 +11,21 @@ lim_intervalo <- c(38, 43, 48, 53, 58, 63, 68, 73)
 
 lista_df <- as.data.frame(table(cut(lista, breaks = lim_intervalo)))
 
-grid(nx = NA, ny = NULL, lty = 2, col = "gray", lwd = 1)
-
-h_list = hist(lista, col = "khaki", add = TRUE,
-              main = "Histograma da Frequência da Lista de Números Agrupados",
+h_lista = hist(lista, col = "khaki",
+              main = "HISTOGRAMA DA LISTA DE NÚMEROS AGRUPADOS",
               xlab = "Lista de Números Agrupados", ylab = "Frequência Absoluta",
               xlim = c(35, 75), ylim = c(0, 15),
-              xaxp = c(38, 73, 7),
+              xaxp = c(38, 73, 7), add = TRUE,
               labels = as.character(lista_df$Freq), breaks = lim_intervalo)
 
 xfit <- seq(min(lista), max(lista), length = 200)
 yfit <- dnorm(xfit, mean(lista), sd(lista))
-yfit <- yfit*diff(h_list$mids[1:2])*length(lista)
+yfit <- yfit*diff(h_lista$mids[1:2])*length(lista)
 lines(xfit, yfit, col = "midnightblue", lwd = 2)
 
 #############################################################
+
+#LETRA B: MÉDIA, MODA DE CZUBER, MEDIANA, TERCEIRO QUARTIL, PERCENTIS 8, 50 E 80
 
 #################### FUNÇÃO MODA CZUBER #####################
 
@@ -44,8 +46,6 @@ moda.czuber <- function(dados){
 }
 
 #############################################################
-
-#LETRA B: MÉDIA, MODA DE CZUBER, MEDIANA, TERCEIRO QUARTIL, PERCENTIS 8, 50 E 80
 
 #MÉDIA
 media <- mean(lista)
@@ -74,9 +74,7 @@ percentil_80 <- quantile(lista, 0.8)
 
 #BOXPLOT VERTICAL
 
-grid(nx = NA, ny = NULL, lty = 2, col = "gray", lwd = 1)
-
-boxplot_lista_v <- boxplot(lista, add = TRUE,
+boxplot_lista_v <- boxplot(lista, add = TRUE, 
                          main = "Boxplot da Lista de Números",
                          ylab = "Lista de Números",
                          col = "khaki")
@@ -89,6 +87,3 @@ boxplot_lista_h <- boxplot(lista, horizontal = TRUE, notch = TRUE,
                          col = "khaki")
 
 #############################################################
-
-
-
