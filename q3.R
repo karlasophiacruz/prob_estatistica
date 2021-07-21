@@ -21,7 +21,6 @@ obitos.craibas.idade <- cut(obitos.craibas$idade, seq(0, 100, by = 10))
 
 plot.obitos.sexo <- table(obitos.craibas$sexo, obitos.craibas.idade)
 
-<<<<<<< HEAD
 lim_idade <- c("0 - 10", "10 - 20", "20 - 30", "30 - 40", "40 - 50", "50 - 60", 
                "60 - 70", "70 - 80", "80 - 90", "90 - 100")
 
@@ -51,33 +50,4 @@ gb_craibas2 <- barplot(casos.craibas, beside = TRUE, add = TRUE,
         legend = TRUE, args.legend = list(x = 30, y = 130, cex = 0.8, text.font = 2, 
                                            bg = "ghostwhite"))
 
-=======
-barplot(plot.obitos.sexo, beside=TRUE,
-        col=c("mistyrose2", "lightskyblue1", ylim=c(0, 300), names.arg= names,
-        las=2,  main="Gráfico do número de obitos no estado de Craíbas")
-        xlab="Idade dividida em anos", ylab= "Número de Óbitos")
-          
-legend(topright, pch=15, col=c("mistyrose2", "lightskyblue1"),
-       legend= c("Homens", "Mulheres"), cex=1.25,
-       bty="n")
-###################################################################        
-        
-        
-        
-
-
-
-craibas.idade <- cut(dados.pacientes.craibas$idade, breaks)
-plot.contaminacao.sexo <- table(dados.pacientes.craibas$sexo, craibas.idade)
-
-barplot(plot.contaminacao.sexo, beside=TRUE,
-        las=2, ylim=c(0, 12000)
-        col=c("mistyrose2", "lightskyblue1", names.arg= names,
-        xlab="Idade dividida em anos", ylab="Número de indivívuos contaminados",
-        main="Gráfico do número de contaminados no estado de Craíbas")
-        
-legend(topright, pch=15, col=c("mistyrose2", "lightskyblue1"),
-       legend= c("Homens", "Mulheres"), cex=1.25,
-       bty="n")
->>>>>>> 3cab0c4ba543f3b5540526d918de02834d2bb119
 ######################################################################
