@@ -2,7 +2,7 @@ craibas.idade <- cut(obitos.craibas$idade, breaks)
 plot.obitos.sexo <- table(obitos.craibas$sexo, obitos.craibas.idade)
 
 barplot(plot.obitos.sexo, beside=TRUE,
-        col=c("mistyrose2", "lightskyblue1", ylim=c(0, 500), names.arg= names,
+        col=c("mistyrose2", "lightskyblue1", ylim=c(0, 300), names.arg= names,
         las=2,  main="Gráfico do número de obitos no estado de Craíbas")
         xlab="Idade dividida em anos", ylab= "Número de Óbitos")
           
@@ -17,7 +17,7 @@ legend(topright, pch=15, col=c("mistyrose2", "lightskyblue1"),
 
 
 craibas.idade <- cut(dados.pacientes.craibas$idade, breaks)
-plot..sexo <- table(dados.pacientes.craibas$sexo, craibas.idade)
+plot.contaminacao.sexo <- table(dados.pacientes.craibas$sexo, craibas.idade)
 
 barplot(plot.contaminacao.sexo, beside=TRUE,
         las=2, ylim=c(0, 12000)
