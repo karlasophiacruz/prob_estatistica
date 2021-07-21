@@ -1,5 +1,6 @@
-lista <- c(48, 58, 56, 63, 52, 50, 59, 51, 59, 38, 57, 56, 73, 61, 41, 55, 49, 61, 49, 49, 52, 55, 60, 52, 54,
-           57, 47, 66, 60, 53, 59, 50, 45, 57, 64, 56, 57, 60, 47, 58, 53, 58, 66, 47, 40)
+lista <- c(48, 58, 56, 63, 52, 50, 59, 51, 59, 38, 57, 56, 73, 61, 41, 55, 49, 61, 
+           49, 49, 52, 55, 60, 52, 54, 57, 47, 66, 60, 53, 59, 50, 45, 57, 64, 56, 
+           57, 60, 47, 58, 53, 58, 66, 47, 40)
 
 grid <- grid(nx = NA, ny = NULL, lty = 2, col = "gray", lwd = 1)
 
@@ -50,11 +51,11 @@ moda.czuber <- function(dados){
 #MÉDIA
 media <- mean(lista)
 
-#MEDIANA
-mediana <- median(lista)
-
 #MODA DE CZUBER
 moda_czuber <- moda.czuber(lista)
+
+#MEDIANA
+mediana <- median(lista)
 
 #TERCEIRO QUARTIL
 terceiro_quartil <- quantile(lista, 0.75)
@@ -74,7 +75,7 @@ percentil_80 <- quantile(lista, 0.8)
 
 #BOXPLOT VERTICAL
 
-boxplot_lista_v <- boxplot(lista, add = TRUE, 
+boxplot_lista_v <- boxplot(lista, add = TRUE,
                          main = "Boxplot da Lista de Números",
                          ylab = "Lista de Números",
                          col = "khaki")
